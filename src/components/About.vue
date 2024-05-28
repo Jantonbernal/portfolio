@@ -29,7 +29,7 @@ watch(errorEndPoint, (received) => {
     <v-container>
         <v-row>
             <v-col cols="12" md="6">
-                <p class="text-h1 font-weight-bold text-important">Juan Manuel Antón.</p>
+                <p class="text-h1 font-weight-bold text-important">Juan Manuel Antón</p>
                 <code class="text-h5 my-4">
                     <div>
                         <p class="typingEffect">
