@@ -65,8 +65,6 @@ const save = async () => {
 }
 
 const sendEmail = async () => {
-    reset()
-
     var data = {
         service_id: 'service_yku7wlm',
         template_id: 'template_vpyzbda',
@@ -103,6 +101,7 @@ watch(dataEndPoint, (received) => {
             icon: "success",
             timer: 2000
         });
+        reset()
     }
 })
 
@@ -115,18 +114,19 @@ watch(errorEndPoint, (received) => {
             icon: "error",
             timer: 2000
         });
+        reset()
     }
 })
 
 </script>
 
 <template>
-    <v-container fluid>
+    <v-container>
         <v-card class="mx-auto hover" prepend-icon="mdi mdi-email-arrow-right-outline"
             title="Escribeme, con mucho gusto te atenderé">
             <v-container fluid>
                 <v-row>
-                    <v-col cols="12">
+                    <v-col cols="12" md="5">
                         <div :class="{ error: v$.form.email.$errors.length }">
                             <v-text-field v-model="form.email"
                                 :error-messages="v$.form.email.$errors.map(e => e.$message)"
@@ -134,7 +134,7 @@ watch(errorEndPoint, (received) => {
                                 variant="solo-filled" color="primary"></v-text-field>
                         </div>
                     </v-col>
-                    <v-col cols="12">
+                    <v-col cols="12" md="7">
                         <div :class="{ error: v$.form.subject.$errors.length }">
                             <v-text-field v-model="form.subject"
                                 :error-messages="v$.form.subject.$errors.map(e => e.$message)"
