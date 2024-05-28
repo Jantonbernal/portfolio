@@ -19,7 +19,7 @@ onMounted(() => {
             'Git'
         ],
         uri: 'https://www.limatours.com.pe/',
-        image: 'limatours.png'
+        image: 'limatours.png',
     })
 
     projects.value.push({
@@ -38,7 +38,7 @@ onMounted(() => {
             'Git'
         ],
         uri: 'https://larebaja.pe/',
-        image: 'lustro.png'
+        image: 'lustro.png',
     })
 
     projects.value.push({
@@ -51,7 +51,7 @@ onMounted(() => {
             'PHP',
             'Laravel',
         ],
-        image: 'saisac.png'
+        image: 'saisac.png',
     })
 
     projects.value.push({
@@ -64,7 +64,7 @@ onMounted(() => {
             'PHP',
             'Laravel',
         ],
-        image: 'coespe.png'
+        image: 'coespe.png',
     })
 })
 
@@ -80,6 +80,10 @@ const height = computed(() => {
     return undefined
 })
 
+const getImageUrl = (name) => {
+    return new URL(`../assets/images/projects/${name}`, import.meta.url).href
+}
+
 </script>
 
 <template>
@@ -88,8 +92,7 @@ const height = computed(() => {
             <v-col cols="auto" v-for="(item, index) in projects" :key="index">
                 <v-card :class="height > 400 ? ' mr-5' : ''" class="mx-auto hover" variant="plain" max-width="450"
                     min-height="350" :href="item.uri" target="_blank" hover>
-                    <img :src="'/portfolio/src/assets/images/projects/' + item.image" class="align-end" height="200px"
-                        width="100%" cover>
+                    <img :src="getImageUrl(item.image)" class="align-end" height="200px" width="100%" cover>
                     <v-card-title v-text="item.company"></v-card-title>
                     </img>
 

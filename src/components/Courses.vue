@@ -49,6 +49,10 @@ const height = computed(() => {
     }
     return undefined
 })
+
+const getImageUrl = (name) => {
+    return new URL(`../assets/images/courses/${name}`, import.meta.url).href
+}
 </script>
 
 <template>
@@ -57,7 +61,7 @@ const height = computed(() => {
             <v-col cols="auto" v-for="(item, index) in courses" :key="index">
                 <v-card :class="height > 400 ? ' mr-5' : ''" class="mx-auto hover" variant="plain" max-width="400" min-height="380" :href="item.uri"
                     target="_blank" hover>
-                    <img :src="'/portfolio/src/assets/images/courses/' + item.image" class="align-end" height="200px" width="100%"
+                    <img :src="getImageUrl(item.image)" class="align-end" height="200px" width="100%"
                         cover>
                     <v-card-title class="wrap" v-text="item.title"></v-card-title>
                     </img>
