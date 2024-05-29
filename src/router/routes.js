@@ -67,13 +67,13 @@ const routes = [
         ]
     },
     {
-        path: '/:pathMatch(.*)*',
+        path: '/:catchAll(.*)',
         name: 'NotFound',
         component: NotFound,
         meta: {
             requiresAuth: false
         }
-    },
+    }
 ]
 
 export default routes
