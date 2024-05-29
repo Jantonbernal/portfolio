@@ -1,6 +1,12 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue';
 import { useDisplay } from 'vuetify'
+import { useThemeStore } from "@/stores/theme.js";
+import { storeToRefs } from 'pinia';
+
+// Store Theme
+const useTheme = useThemeStore();
+const { currentTheme } = storeToRefs(useTheme);
 
 const { name } = useDisplay()
 const systems = ref([])
@@ -61,23 +67,18 @@ const getImageUrl = (name) => {
 
 <template>
     <v-container fluid>
-        <v-row align="center" justify="center" dense>
-            <v-col cols="auto" v-for="(item, index) in systems" :key="index">
-                <v-card :class="height > 400 ? ' mr-5' : ''" class="mx-auto hover" variant="plain" max-width="400" min-height="380" :href="item.uri"
-                    target="_blank" hover>
-                    <img :src="getImageUrl(item.image)" class="align-end" height="200px" width="100%"
-                        cover>
-                    <v-card-title class="wrap" v-text="item.title"></v-card-title>
-                    </img>
+        <v-card v-for="(item, index) in systems" :key="index" class="mx-auto mb-5" :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'" variant="plain" max-width="400"
+            min-height="380" :href="item.uri" target="_blank" hover>
+            <img :src="getImageUrl(item.image)" class="align-end" height="200px" width="100%" cover>
+            <v-card-title class="wrap" v-text="item.title"></v-card-title>
+            </img>
 
-                    <div class="px-4 mb-2">
-                        <v-chip color="primary ma-2" v-for="(skill, x) in item.skills" :key="x">
-                            <p class="font-weight-bold text-caption"> {{ skill }} </p>
-                        </v-chip>
-                    </div>
-                </v-card>
-            </v-col>
-        </v-row>
+            <div class="px-4 mb-2">
+                <v-chip label :class="currentTheme == 'dark' ? 'primary' : 'info'" class="ma-2" v-for="(skill, x) in item.skills" :key="x">
+                    <p class="font-weight-bold text-caption"> {{ skill }} </p>
+                </v-chip>
+            </div>
+        </v-card>
     </v-container>
 </template>
 

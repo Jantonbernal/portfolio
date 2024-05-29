@@ -10,33 +10,13 @@ const { name } = useDisplay()
 // Store Theme
 const useTheme = useThemeStore();
 const { toggleTheme } = useTheme;
-const { iconTheme, colorTheme } = storeToRefs(useTheme);
+const { iconTheme, colorTheme, currentTheme } = storeToRefs(useTheme);
 // Store de menus
 const useMenu = useMenuStore();
 const { drawer, menus } = storeToRefs(useMenu);
 
 const options = ref([])
 const socialMedia = ref([])
-
-const height = computed(() => {
-    switch (name.value) {
-        case 'xs': return 220
-        case 'sm': return 400
-        case 'md': return 500
-        case 'lg': return 600
-        case 'xl': return 800
-        case 'xxl': return 1200
-    }
-    return undefined
-})
-
-watch(height, (value) => {
-    if (value <= 500) {
-        drawer.value = false
-    } else {
-        drawer.value = true
-    }
-})
 
 onMounted(() => {
     socialMedia.value.push({
@@ -52,6 +32,39 @@ onMounted(() => {
         'link': 'https://www.youtube.com/@jantongcode',
     })
 })
+
+const height = computed(() => {
+    switch (name.value) {
+        case 'xs': return 220
+        case 'sm': return 400
+        case 'md': return 500
+        case 'lg': return 600
+        case 'xl': return 800
+        case 'xxl': return 1200
+    }
+    return 0
+})
+
+watch(height, (value) => {
+    if (value <= 500) {
+        drawer.value = false
+    } else {
+        drawer.value = true
+    }
+})
+
+const verifyToShowMenu = () => {
+    switch (name.value) {
+        case 'xs': return drawer.value = false
+        case 'sm': return drawer.value = false
+        case 'md': return drawer.value = false
+        case 'lg': return drawer.value = true
+        case 'xl': return drawer.value = true
+        case 'xxl': return drawer.value = true
+    }
+}
+
+verifyToShowMenu()
 
 const loadMenu = () => {
     options.value.push({
@@ -104,12 +117,14 @@ iterateMenu()
 </script>
 
 <template>
-    <v-navigation-drawer v-model="drawer" class="pa-8" floating>
+    <v-navigation-drawer v-model="drawer" class="pa-8" floating app :width="height >= 500 ? 300 : 257">
         <div class="d-flex flex-column justify-space-between align-center">
-            <v-btn @click="toggleTheme" :icon="iconTheme" class="hover" variant="text" size="x-large"></v-btn>
+            <v-btn @click="toggleTheme" :icon="iconTheme"
+                :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'" variant="text" size="x-large"></v-btn>
             <v-list v-for="(item, index) in options" :key="index" class="cursor-pointer pt-0 mt-5 text-center"
                 density="compact" nav>
-                <v-list-item class="hover" density="comfortable" exact variant="text" tile :to="{ name: item.link }">
+                <v-list-item :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'" density="comfortable" exact
+                    variant="text" tile :to="{ name: item.link }">
                     <v-list-item-title class="typingEffect text-caption">
                         {{ item.print }}
                     </v-list-item-title>
@@ -117,7 +132,8 @@ iterateMenu()
             </v-list>
             <div class="d-flex flex-row mt-16">
                 <v-btn v-for="(item, index) in socialMedia" :key="index" :icon="item.icon" :href="item.link"
-                    target="_blank" class="hover" variant="text" size="large"></v-btn>
+                    target="_blank" :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'" variant="text"
+                    size="large"></v-btn>
             </div>
         </div>
     </v-navigation-drawer>

@@ -1,5 +1,9 @@
-.hover:hover {
+.hover-dark:hover {
     color: rgb(94 234 212/1);
+}
+
+.hover-light:hover {
+    color: rgb(68, 151, 68);
 }
 
 .text-important {

@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { ref } from "vue";
 
 export const useMenuStore = defineStore('menu', () => {
-    const drawer = ref(true);
+    const drawer = ref(false);
     const menus = ref([]);
 
     const changeDrawer = (value) => {

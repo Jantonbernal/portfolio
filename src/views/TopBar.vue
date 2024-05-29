@@ -24,7 +24,7 @@ const height = computed(() => {
 </script>
 
 <template>
-    <v-app-bar :elevation="0" density="compact" flat floating style="background: transparent;">
+    <v-app-bar :elevation="0" density="compact" flat floating style="background: transparent;" app>
         <template v-slot:prepend>
             <v-app-bar-nav-icon v-if="height < 600" @click="changeDrawer(!drawer)"></v-app-bar-nav-icon>
         </template>

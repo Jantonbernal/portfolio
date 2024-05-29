@@ -1,11 +1,16 @@
 <script setup>
 import { watch, reactive, computed, ref } from "vue";
-import { storeToRefs } from "pinia";
 import { useVuelidate } from '@vuelidate/core'
 import { required, email, minLength, helpers } from '@vuelidate/validators'
 import Swal from 'sweetalert2'
 import '@sweetalert2/theme-wordpress-admin/wordpress-admin.scss';
 import axios from "axios";
+import { useThemeStore } from "@/stores/theme.js";
+import { storeToRefs } from 'pinia';
+
+// Store Theme
+const useTheme = useThemeStore();
+const { currentTheme } = storeToRefs(useTheme);
 
 // Formulario
 const form = reactive({
@@ -122,8 +127,8 @@ watch(errorEndPoint, (received) => {
 
 <template>
     <v-container>
-        <v-card class="mx-auto hover" prepend-icon="mdi mdi-email-arrow-right-outline"
-            title="Escribeme, con mucho gusto te atenderé">
+        <v-card class="mx-auto" :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'"
+            prepend-icon="mdi mdi-email-arrow-right-outline" title="Escribeme, con mucho gusto te atenderé">
             <v-container fluid>
                 <v-row>
                     <v-col cols="12" md="5">
@@ -131,7 +136,8 @@ watch(errorEndPoint, (received) => {
                             <v-text-field v-model="form.email"
                                 :error-messages="v$.form.email.$errors.map(e => e.$message)"
                                 @blur="v$.form.email.$touch" @input="v$.form.email.$touch" label="Ingrese su Email"
-                                variant="solo-filled" color="primary"></v-text-field>
+                                variant="solo-filled"
+                                :color="currentTheme == 'dark' ? 'primary' : 'info'"></v-text-field>
                         </div>
                     </v-col>
                     <v-col cols="12" md="7">
@@ -139,14 +145,16 @@ watch(errorEndPoint, (received) => {
                             <v-text-field v-model="form.subject"
                                 :error-messages="v$.form.subject.$errors.map(e => e.$message)"
                                 @blur="v$.form.subject.$touch" @input="v$.form.subject.$touch" label="Asunto"
-                                variant="solo-filled" color="primary"></v-text-field>
+                                variant="solo-filled"
+                                :color="currentTheme == 'dark' ? 'primary' : 'info'"></v-text-field>
                         </div>
                     </v-col>
                     <v-col cols="12">
                         <div :class="{ error: v$.form.body.$errors.length }">
                             <v-textarea v-model="form.body" :error-messages="v$.form.body.$errors.map(e => e.$message)"
                                 @blur="v$.form.body.$touch" @input="v$.form.body.$touch" label="Cuerpo del Mensaje"
-                                variant="solo-filled" color="primary" rows="1" auto-grow></v-textarea>
+                                variant="solo-filled" :color="currentTheme == 'dark' ? 'primary' : 'info'" rows="1"
+                                auto-grow></v-textarea>
                         </div>
                     </v-col>
                 </v-row>
@@ -156,7 +164,7 @@ watch(errorEndPoint, (received) => {
                 <v-spacer></v-spacer>
                 <v-btn prepend-icon="mdi mdi-email-arrow-right-outline" block @click="save" :disabled="loading">
                     <template v-slot:prepend>
-                        <v-icon color="primary"></v-icon>
+                        <v-icon :class="currentTheme == 'dark' ? 'primary' : 'info'"></v-icon>
                     </template>
                     Enviar
                 </v-btn>

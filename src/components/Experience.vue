@@ -1,5 +1,11 @@
 <script setup>
 import { onMounted, ref } from 'vue';
+import { useThemeStore } from "@/stores/theme.js";
+import { storeToRefs } from 'pinia';
+
+// Store Theme
+const useTheme = useThemeStore();
+const { currentTheme } = storeToRefs(useTheme);
 
 const loading = ref(false)
 const experiences = ref([])
@@ -98,42 +104,38 @@ onMounted(() => {
 
 <template>
     <v-container fluid>
-        <v-row align="center" justify="center">
-            <v-col cols="auto" v-for="(item, index) in experiences" :key="index">
-                <v-card class="mx-auto hover" max-width="550" variant="plain" hover>
-                    <template v-slot:loader="{ isActive }">
-                        <v-progress-linear :active="isActive" color="deep-purple" height="4"
-                            indeterminate></v-progress-linear>
-                    </template>
+        <v-card v-for="(item, index) in experiences" :key="index" class="mx-auto my-5" :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'" max-width="550" variant="plain"
+            hover>
+            <template v-slot:loader="{ isActive }">
+                <v-progress-linear :active="isActive" color="deep-purple" height="4" indeterminate></v-progress-linear>
+            </template>
 
-                    <v-card-item>
-                        <v-card-title>
-                            {{ item.title }}
-                        </v-card-title>
+            <v-card-item>
+                <v-card-title>
+                    {{ item.title }}
+                </v-card-title>
 
-                        <v-card-subtitle>
-                            <span class="me-1">
-                                {{ item.company }}
-                            </span>
-                        </v-card-subtitle>
-                    </v-card-item>
+                <v-card-subtitle>
+                    <span class="me-1">
+                        {{ item.company }}
+                    </span>
+                </v-card-subtitle>
+            </v-card-item>
 
-                    <v-card-text>
-                        <div class="text-subtitle-1">
-                            {{ item.country }} | {{ item.from }} - {{ item.to }}
-                        </div>
-                        <div>
-                            {{ item.description }}
-                        </div>
-                    </v-card-text>
+            <v-card-text>
+                <div class="text-subtitle-1">
+                    {{ item.country }} | {{ item.from }} - {{ item.to }}
+                </div>
+                <div>
+                    {{ item.description }}
+                </div>
+            </v-card-text>
 
-                    <div class="px-4 mb-2">
-                        <v-chip color="primary ma-2" v-for="(skill, x) in item.skills" :key="x">
-                            <p class="font-weight-bold"> {{ skill }} </p>
-                        </v-chip>
-                    </div>
-                </v-card>
-            </v-col>
-        </v-row>
+            <div class="px-4 mb-2">
+                <v-chip label :class="currentTheme == 'dark' ? 'primary' : 'info'" class="ma-2" v-for="(skill, x) in item.skills" :key="x">
+                    <p class="font-weight-bold"> {{ skill }} </p>
+                </v-chip>
+            </div>
+        </v-card>
     </v-container>
 </template>

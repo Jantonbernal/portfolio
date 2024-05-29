@@ -23,10 +23,15 @@ export const useThemeStore = defineStore('theme', () => {
         return 'black'
     })
 
+    const currentTheme = computed(() => {
+        return theme.global.name.value
+    })
+
     return {
         theme,
         toggleTheme,
         iconTheme,
-        colorTheme
+        colorTheme,
+        currentTheme
     }
 })

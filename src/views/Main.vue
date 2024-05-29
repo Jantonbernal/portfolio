@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <v-main class="my-3" style="min-height: 300px;">
+  <v-main class="my-3 scrollable-content" style="min-height: 300px;">
     <v-container fluid>
       <!-- Navigation -->
       <router-view v-slot="{ Component }">

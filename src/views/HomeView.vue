@@ -6,10 +6,31 @@ import Footer from './Footer.vue';
 </script>
 
 <template>
-    <v-layout ref="app" class="rounded rounded-md" color="blue-grey-lighten-4">
+    <v-app>
         <SideBar />
         <TopBar />
         <Main />
         <!-- <Footer /> -->
-    </v-layout>
+    </v-app>
 </template>
+
+
+<style>
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    /* Oculta el desplazamiento global */
+}
+
+#app {
+    display: flex;
+    height: 100%;
+}
+
+.scrollable-content {
+    height: 96vh;
+    overflow-y: auto;
+}
+</style>
