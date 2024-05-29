@@ -3,6 +3,12 @@ import { ref, watch } from "vue";
 import axios from "axios";
 import Swal from 'sweetalert2'
 import '@sweetalert2/theme-wordpress-admin/wordpress-admin.scss';
+import { useThemeStore } from "@/stores/theme.js";
+import { storeToRefs } from 'pinia';
+
+// Store Theme
+const useTheme = useThemeStore();
+const { currentTheme } = storeToRefs(useTheme);
 
 const dataEndPoint = ref(null);
 const errorEndPoint = ref(null);
@@ -29,7 +35,9 @@ watch(errorEndPoint, (received) => {
     <v-container>
         <v-row>
             <v-col cols="12" md="6">
-                <p class="text-h1 font-weight-bold text-important">Juan Manuel Antón</p>
+                <p class="text-h1 font-weight-bold"
+                    :class="currentTheme == 'dark' ? 'text-important-dark' : 'text-important-light'">Juan Manuel Antón
+                </p>
                 <code class="text-h5 my-4">
                     <div>
                         <p class="typingEffect">
@@ -40,12 +48,12 @@ watch(errorEndPoint, (received) => {
                 <p class="text-subtitle-1 mt-10 description">
                     Soy Desarrollador Web, dedicado al desarrollo y enseñanza de tecnologías web, mayormente
                     Javascript
-                    con <span class="text-important"> VueJS </span> y PHP con
-                    <span class="text-important"> Laravel. </span>
+                    con <span :class="currentTheme == 'dark' ? 'text-important-dark' : 'text-important-light'"> VueJS </span> y PHP con
+                    <span :class="currentTheme == 'dark' ? 'text-important-dark' : 'text-important-light'"> Laravel. </span>
                     Con mas de 6 años de experiencia en desarrollo web profesional y múltiples proyectos web con Laravel
                     y VueJS,
                     estos proyectos los puedes observar en la sección
-                    <span class="text-important">
+                    <span :class="currentTheme == 'dark' ? 'text-important-dark' : 'text-important-light'">
                         <v-btn variant="plain" size="small" density="compact" :to="{ name: 'Project' }">
                             proyectos.
                         </v-btn>
