@@ -128,7 +128,7 @@ watch(errorEndPoint, (received) => {
 <template>
     <v-container>
         <v-card class="mx-auto" :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'"
-            prepend-icon="mdi mdi-email-arrow-right-outline" title="Escribeme, con mucho gusto te atenderé">
+            prepend-icon="mdi mdi-email-arrow-right-outline" title="Hola, si necesitas ayuda, escríbeme con mucho gusto te puedo ayudar">
             <v-container fluid>
                 <v-row>
                     <v-col cols="12" md="5">

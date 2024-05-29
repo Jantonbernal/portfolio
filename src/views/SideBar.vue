@@ -117,7 +117,7 @@ iterateMenu()
 </script>
 
 <template>
-    <v-navigation-drawer v-model="drawer" class="pa-8" floating app :width="height >= 500 ? 300 : 257">
+    <v-navigation-drawer v-model="drawer" class="pa-8" floating app :width="height >= 500 ? 320 : 257">
         <div class="d-flex flex-column justify-space-between align-center">
             <v-btn @click="toggleTheme" :icon="iconTheme"
                 :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'" variant="text" size="x-large"></v-btn>
