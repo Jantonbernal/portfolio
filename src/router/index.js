@@ -5,7 +5,8 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   linkExactActiveClass: 'active',
   routes: routes,
-  base: process.env.NODE_ENV === 'production' ? '/portfolio/' : '/',
+  // base: process.env.NODE_ENV === 'production' ? '/portfolio/' : '/',
+  base: '/portfolio/'
 })
 
 export default router
