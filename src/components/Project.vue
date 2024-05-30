@@ -94,15 +94,17 @@ const getImageUrl = (name) => {
 
 <template>
     <v-container fluid>
-        <v-card v-for="(item, index) in projects" class="mx-auto mb-5" :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'" variant="plain" max-width="450" min-height="350"
-            :href="item.uri" target="_blank" hover>
+        <v-card v-for="(item, index) in projects" class="mx-auto mb-5"
+            :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'" variant="plain" max-width="450"
+            min-height="350" :href="item.uri" target="_blank" hover>
             <img :src="getImageUrl(item.image)" class="align-end" height="200px" width="100%" cover>
-            <v-card-title v-text="item.company"></v-card-title>
+                <v-card-title v-text="item.company"></v-card-title>
             </img>
 
             <div class="px-4 mb-2">
-                <v-chip label :class="currentTheme == 'dark' ? 'primary' : 'info'" class="ma-2" v-for="(skill, x) in item.skills" :key="x">
-                    <p class="font-weight-bold text-caption"> {{ skill }} </p>
+                <v-chip label :class="currentTheme == 'dark' ? 'primary' : 'info'" class="ma-2"
+                    v-for="(skill, x) in item.skills" :key="x">
+                    <p class="font-weight-bold"> {{ skill }} </p>
                 </v-chip>
             </div>
         </v-card>

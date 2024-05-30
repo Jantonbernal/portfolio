@@ -75,7 +75,7 @@ const getImageUrl = (name) => {
 
             <div class="px-4 mb-2">
                 <v-chip label :class="currentTheme == 'dark' ? 'primary' : 'info'" class="ma-2" v-for="(skill, x) in item.skills" :key="x">
-                    <p class="font-weight-bold text-caption"> {{ skill }} </p>
+                    <p class="font-weight-bold"> {{ skill }} </p>
                 </v-chip>
             </div>
         </v-card>

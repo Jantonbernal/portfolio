@@ -38,8 +38,6 @@ body {
   overflow: hidden;
   /* Evitar el desplazamiento de la barra de desplazamiento */
   background-color: #f0f0f0;
-  /* Color de fondo */
-  cursor: none;
 }
 
 .app {

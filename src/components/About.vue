@@ -1,33 +1,33 @@
 <script setup>
-import { ref, watch } from "vue";
+import { computed, ref, watch } from "vue";
 import axios from "axios";
 import Swal from 'sweetalert2'
 import '@sweetalert2/theme-wordpress-admin/wordpress-admin.scss';
 import { useThemeStore } from "@/stores/theme.js";
 import { storeToRefs } from 'pinia';
+import { useDisplay } from 'vuetify'
 
 // Store Theme
 const useTheme = useThemeStore();
 const { currentTheme } = storeToRefs(useTheme);
 
-const dataEndPoint = ref(null);
-const errorEndPoint = ref(null);
+const { name } = useDisplay()
 
 const reset = () => {
     dataEndPoint.value = null;
     errorEndPoint.value = null;
 }
 
-watch(errorEndPoint, (received) => {
-    if (received) {
-        console.log(received);
-        Swal.fire({
-            title: "Error!",
-            text: "Ocurrio un error al obtener la frase celebre",
-            icon: "error",
-            timer: 2000
-        });
+const height = computed(() => {
+    switch (name.value) {
+        case 'xs': return 220
+        case 'sm': return 400
+        case 'md': return 500
+        case 'lg': return 600
+        case 'xl': return 800
+        case 'xxl': return 1200
     }
+    return 0
 })
 </script>
 
@@ -35,8 +35,14 @@ watch(errorEndPoint, (received) => {
     <v-container>
         <v-row>
             <v-col cols="12" md="6">
-                <p class="text-h1 font-weight-bold"
+                <!-- <p class="font-weight-bold"
                     :class="currentTheme == 'dark' ? 'text-important-dark' : 'text-important-light'">Juan Manuel Antón
+                </p> -->
+                <p class="font-weight-bold" :class="[
+                    currentTheme == 'dark' ? 'text-important-dark' : 'text-important-light',
+                    height <= 400 ? 'text-h4' : 'text-h1'
+                ]">
+                    Juan Manuel Antón
                 </p>
                 <code class="text-h5 my-4">
                     <div>
@@ -45,11 +51,13 @@ watch(errorEndPoint, (received) => {
                         </p>
                     </div>
                 </code>
-                <p class="text-subtitle-1 mt-10 description">
+                <p class="mt-10 description">
                     Soy Desarrollador Web, dedicado al desarrollo y enseñanza de tecnologías web, mayormente
                     Javascript
-                    con <span :class="currentTheme == 'dark' ? 'text-important-dark' : 'text-important-light'"> VueJS </span> y PHP con
-                    <span :class="currentTheme == 'dark' ? 'text-important-dark' : 'text-important-light'"> Laravel. </span>
+                    con <span :class="currentTheme == 'dark' ? 'text-important-dark' : 'text-important-light'"> VueJS
+                    </span> y PHP con
+                    <span :class="currentTheme == 'dark' ? 'text-important-dark' : 'text-important-light'"> Laravel.
+                    </span>
                     Con mas de 6 años de experiencia en desarrollo web profesional y múltiples proyectos web con Laravel
                     y VueJS,
                     estos proyectos los puedes observar en la sección
@@ -61,7 +69,7 @@ watch(errorEndPoint, (received) => {
                 </p>
             </v-col>
             <v-col cols="12" md="6" class="d-flex justify-center align-center align-self-center">
-                <v-avatar rounded="0" size="350">
+                <v-avatar rounded="0" :size="height <= 400 ? 190 : 350">
                     <img width="100%" src="@/assets/images/profile-2.png" cover alt="user" />
                 </v-avatar>
             </v-col>

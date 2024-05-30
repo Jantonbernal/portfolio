@@ -1,3 +1,21 @@
+body {
+    font-family: 'Kalam', cursive !important;
+}
+
+/* Ocultar el cursor en toda la aplicación */
+* {
+    cursor: none !important;
+}
+
+/* Asegurarse de que los elementos interactivos también oculten el cursor */
+a,
+button,
+input,
+select,
+textarea {
+    cursor: none !important;
+}
+
 .hover-dark:hover {
     color: rgb(94 234 212/1);
 }
