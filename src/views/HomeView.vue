@@ -2,7 +2,7 @@
 import SideBar from './SideBar.vue';
 import TopBar from './TopBar.vue';
 import Main from './Main.vue';
-import Footer from './Footer.vue';
+// import Footer from './Footer.vue';
 </script>
 
 <template>

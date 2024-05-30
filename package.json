@@ -16,7 +16,6 @@
     "@vuelidate/validators": "^2.0.4",
     "axios": "^1.7.2",
     "cors": "^2.8.5",
-    "cursor-effects": "^1.0.15",
     "pinia": "^2.1.7",
     "sweetalert2": "^11.11.0",
     "vue": "^3.4.21",

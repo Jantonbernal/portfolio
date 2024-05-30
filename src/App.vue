@@ -1,11 +1,6 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import { onMounted, ref } from 'vue';
-// import { followingDotCursor } from 'cursor-effects';
-
-onMounted(() => {
-  // new followingDotCursor({particles: 15});
-});
+import { RouterView } from 'vue-router'
+import { ref } from 'vue';
 
 const cursorX = ref(0);
 const cursorY = ref(0);
@@ -14,7 +9,6 @@ const handleMouseMove = (event) => {
   cursorX.value = event.clientX;
   cursorY.value = event.clientY;
 };
-
 </script>
 
 <template>

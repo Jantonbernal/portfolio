@@ -35,9 +35,6 @@ const height = computed(() => {
     <v-container>
         <v-row>
             <v-col cols="12" md="6">
-                <!-- <p class="font-weight-bold"
-                    :class="currentTheme == 'dark' ? 'text-important-dark' : 'text-important-light'">Juan Manuel Antón
-                </p> -->
                 <p class="font-weight-bold" :class="[
                     currentTheme == 'dark' ? 'text-important-dark' : 'text-important-light',
                     height <= 400 ? 'text-h4' : 'text-h1'
