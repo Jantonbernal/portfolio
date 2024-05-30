@@ -26,6 +26,7 @@ onMounted(() => {
         ],
         uri: 'https://www.limatours.com.pe/',
         image: 'limatours.png',
+        alt: 'Imagen del proyecto TouchClick'
     })
 
     projects.value.push({
@@ -45,6 +46,7 @@ onMounted(() => {
         ],
         uri: 'https://larebaja.pe/',
         image: 'lustro.png',
+        alt: 'Imagen del proyecto Lustro EIRL'
     })
 
     projects.value.push({
@@ -58,6 +60,7 @@ onMounted(() => {
             'Laravel',
         ],
         image: 'saisac.png',
+        alt: 'Imagen del proyecto SAISAC'
     })
 
     projects.value.push({
@@ -71,6 +74,7 @@ onMounted(() => {
             'Laravel',
         ],
         image: 'coespe.png',
+        alt: 'Imagen del proyecto COESPE'
     })
 })
 
@@ -97,7 +101,7 @@ const getImageUrl = (name) => {
         <v-card v-for="(item, index) in projects" class="mx-auto mb-5"
             :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'" variant="plain" max-width="450"
             min-height="350" :href="item.uri" target="_blank" hover>
-            <img :src="getImageUrl(item.image)" class="align-end" height="200px" width="100%" cover>
+            <img :src="getImageUrl(item.image)" class="align-end" height="200px" width="100%" :alt="item.alt" cover>
                 <v-card-title v-text="item.company"></v-card-title>
             </img>
 

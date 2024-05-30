@@ -24,7 +24,8 @@ onMounted(() => {
             'Git'
         ],
         uri: 'https://www.udemy.com/course/creacion-de-aplicaciones-web-modernas-con-laravel-y-vuejs/learn/lecture/20336329?referralCode=C4B970DD2B737A4B03F6#overview',
-        image: 'course-1.jpg'
+        image: 'course-1.jpg',
+        alt: 'Imagen del curso Creación de aplicaciones web modernas con Laravel y Vuejs'
     })
 
     courses.value.push({
@@ -40,7 +41,8 @@ onMounted(() => {
             'Git'
         ],
         uri: 'https://www.udemy.com/course/consumo-de-apis-con-laravel-vuejs/learn/lecture/42643848?referralCode=0C089591919EBF55675C#overview',
-        image: 'course-2.png'
+        image: 'course-2.png',
+        alt: 'Imagen del curso Consumo de APIS con Laravel y Vuejs'
     })
 })
 
@@ -65,7 +67,7 @@ const getImageUrl = (name) => {
     <v-container fluid>
         <v-card v-for="(item, index) in courses" :key="index" class="mx-auto mb-5" :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'" variant="plain" max-width="400"
             min-height="380" :href="item.uri" target="_blank" hover>
-            <img :src="getImageUrl(item.image)" class="align-end" height="200px" width="100%" cover>
+            <img :src="getImageUrl(item.image)" class="align-end" height="200px" width="100%" :alt="item.alt" cover>
             <v-card-title class="wrap" v-text="item.title"></v-card-title>
             </img>
 

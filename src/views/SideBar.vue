@@ -66,41 +66,49 @@ const verifyToShowMenu = () => {
 
 verifyToShowMenu()
 
+// Carga los menus
 const loadMenu = () => {
     options.value.push({
         'link': 'About',
         'name': "echo 'Sobre mi'",
+        'description': 'Ir a la página de Sobre mi',
         'print': ''
     })
     options.value.push({
         'link': 'Experience',
         'name': "echo 'Experiencia'",
+        'description': 'Ir a la página de Experiencia',
         'print': ''
     })
     options.value.push({
         'link': 'Project',
         'name': "echo 'Proyectos'",
+        'description': 'Ir a la página de Proyectos',
         'print': ''
     })
     options.value.push({
         'link': 'Courses',
         'name': "echo 'Cursos'",
+        'description': 'Ir a la página de Cursos',
         'print': ''
     })
     options.value.push({
         'link': 'System',
         'name': "echo 'Sistemas'",
+        'description': 'Ir a la página de Sistemas',
         'print': ''
     })
     options.value.push({
         'link': 'Contact',
         'name': "echo 'Contacto'",
+        'description': 'Ir a la página de Contacto',
         'print': ''
     })
 }
 
 loadMenu()
 
+// Genera la animación
 const iterateMenu = () => {
     if (options.value.length > 0) {
         options.value.forEach((element, index) => {
@@ -125,7 +133,7 @@ iterateMenu()
                 density="compact" nav>
                 <v-list-item :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'" density="comfortable" exact
                     variant="text" tile :to="{ name: item.link }">
-                    <v-list-item-title class="typingEffect text-caption">
+                    <v-list-item-title class="typingEffect text-caption" :aria-label="item.description">
                         {{ item.print }}
                     </v-list-item-title>
                 </v-list-item>
