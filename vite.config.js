@@ -4,6 +4,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import sitemap from 'vite-plugin-sitemap';
+import imagemin from 'vite-plugin-imagemin';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -26,6 +27,13 @@ export default defineConfig({
         { url: '/contact', changefreq: 'weekly', priority: 0.8 },
         // Agrega más rutas según sea necesario
       ],
+    }),
+    imagemin({
+      gifsicle: { optimizationLevel: 2 },
+      mozjpeg: { quality: 80 },
+      optipng: { optimizationLevel: 2 },
+      pngquant: { quality: [0.6, 0.8] },
+      svgo: {},
     }),
   ],
   resolve: {
