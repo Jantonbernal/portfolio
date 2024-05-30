@@ -19,7 +19,7 @@
     "pinia": "^2.1.7",
     "sweetalert2": "^11.11.0",
     "vue": "^3.4.21",
-    "vue-router": "^4.3.0",
+    "vue-router": "^4.3.2",
     "vuetify": "^3.6.7"
   },
   "devDependencies": {
@@ -28,6 +28,7 @@
     "gh-pages": "^6.1.1",
     "sass": "^1.77.2",
     "vite": "^5.2.8",
+    "vite-plugin-sitemap": "^0.6.2",
     "vite-plugin-vue-devtools": "^7.0.25"
   }
 }
