@@ -101,7 +101,7 @@ const getImageUrl = (name) => {
         <v-card v-for="(item, index) in projects" class="mx-auto mb-5"
             :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'" variant="plain" max-width="450"
             min-height="350" :href="item.uri" target="_blank" hover>
-            <img :src="getImageUrl(item.image)" class="align-end" height="200px" width="100%" :alt="item.alt" cover>
+            <img :src="getImageUrl(item.image)" class="align-end" height="200px" width="100%" :alt="item.alt" loading="lazy" cover>
                 <v-card-title v-text="item.company"></v-card-title>
             </img>
 
