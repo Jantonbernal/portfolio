@@ -26,7 +26,7 @@ const height = computed(() => {
 <template>
     <v-app-bar :elevation="0" density="compact" flat floating style="background: transparent;" app>
         <template v-slot:prepend>
-            <v-app-bar-nav-icon v-if="height < 600" @click="changeDrawer(!drawer)"></v-app-bar-nav-icon>
+            <v-app-bar-nav-icon v-if="height < 600" @click="changeDrawer(!drawer)" aria-label="Botón que muestra/oculta el Menú Lateral"></v-app-bar-nav-icon>
         </template>
     </v-app-bar>
 </template>
