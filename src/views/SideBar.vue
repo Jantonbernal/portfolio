@@ -133,7 +133,7 @@ iterateMenu()
                 density="compact" nav>
                 <v-list-item :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'" density="comfortable" exact
                     variant="text" tile :to="{ name: item.link }" :aria-label="item.description">
-                    <v-list-item-title class="typingEffect text-caption" :aria-label="item.description">
+                    <v-list-item-title class="typingEffect text-caption" :aria-label="item.description" aria-details="Menú" role="menubar">
                         {{ item.print }}
                     </v-list-item-title>
                 </v-list-item>
