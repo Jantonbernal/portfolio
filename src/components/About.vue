@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref, watch } from "vue";
+import { computed, onMounted, ref, watch } from "vue";
 import axios from "axios";
 import Swal from 'sweetalert2'
 import '@sweetalert2/theme-wordpress-admin/wordpress-admin.scss';
@@ -29,6 +29,21 @@ const height = computed(() => {
     }
     return 0
 })
+
+const phrase = ref('');
+const author = ref('');
+
+const fetchPhrase = async () => {
+    try {
+        const response = await axios.get('api/phrase');
+        phrase.value = response.data.phrase;  // Asegúrate de acceder al campo correcto en el objeto de respuesta
+        author.value = response.data.author;
+    } catch (error) {
+        console.error('Error fetching phrase:', error);
+    }
+};
+
+onMounted(fetchPhrase);
 </script>
 
 <template>
@@ -67,8 +82,19 @@ const height = computed(() => {
             </v-col>
             <v-col cols="12" md="6" class="d-flex justify-center align-center align-self-center">
                 <v-avatar rounded="0" :size="height <= 400 ? 190 : 350">
-                    <img width="100%" src="@/assets/images/profile-2.png" alt="Perfil" loading="lazy" cover/>
+                    <img width="100%" src="@/assets/images/profile-2.png" alt="Perfil" loading="lazy" cover />
                 </v-avatar>
+            </v-col>
+            <v-col cols="12" v-if="phrase && height > 400">
+                <div class="d-flex flex-column justify-center align-center mt-7">
+                    <p>La frase del día: </p>
+                    <p style="width:50%" class="text-center">
+                        {{ phrase }}
+                    </p>
+                    <p class="text-caption">
+                        "{{ author }}"
+                    </p>
+                </div>
             </v-col>
         </v-row>
     </v-container>
