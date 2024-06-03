@@ -54,7 +54,7 @@ const height = computed(() => {
                     currentTheme == 'dark' ? 'text-important-dark' : 'text-important-light',
                     height <= 400 ? 'text-h4' : 'text-h1'
                 ]">
-                    Juanma
+                    Juan Manuel Antón
                 </p>
                 <code class="text-h5 my-4">
                     <div>
