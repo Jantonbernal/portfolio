@@ -13,6 +13,23 @@ const experiences = ref([])
 onMounted(() => {
     experiences.value.push({
         id: 1,
+        title: 'Desarrollador Web',
+        company: 'PersonalsDates',
+        country: 'USA',
+        from: '2024 JUN',
+        to: '2024 JUL',
+        description: 'Desarrollo del sitio web de citas PersonalsDates',
+        skills: [
+            'JavaScript',
+            'PHP',
+            'VueJS',
+            'Laravel',
+            'JWT'
+        ],
+    })
+
+    experiences.value.push({
+        id: 1,
         title: 'Team Leader',
         company: 'DATAMATRIX',
         country: 'México',
@@ -104,8 +121,8 @@ onMounted(() => {
 
 <template>
     <v-container fluid>
-        <v-card v-for="(item, index) in experiences" :key="index" class="mx-auto my-5" :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'" max-width="550" variant="plain"
-            hover>
+        <v-card v-for="(item, index) in experiences" :key="index" class="mx-auto mb-15"
+            :class="currentTheme == 'dark' ? 'card-dark' : 'card-light'" max-width="550" variant="plain">
             <template v-slot:loader="{ isActive }">
                 <v-progress-linear :active="isActive" color="deep-purple" height="4" indeterminate></v-progress-linear>
             </template>
@@ -132,7 +149,8 @@ onMounted(() => {
             </v-card-text>
 
             <div class="px-4 mb-2">
-                <v-chip label :class="currentTheme == 'dark' ? 'primary' : 'info'" class="ma-2" v-for="(skill, x) in item.skills" :key="x">
+                <v-chip label :class="currentTheme == 'dark' ? 'primary' : 'info'" class="ma-2"
+                    v-for="(skill, x) in item.skills" :key="x">
                     <p class="font-weight-bold"> {{ skill }} </p>
                 </v-chip>
             </div>

@@ -127,21 +127,23 @@ iterateMenu()
 <template>
     <v-navigation-drawer v-model="drawer" class="pa-8" floating app :width="height >= 500 ? 320 : 257">
         <div class="d-flex flex-column justify-space-between align-center">
-            <v-btn @click="toggleTheme" :icon="iconTheme"
-                :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'" variant="text" size="x-large"></v-btn>
+            <v-btn @click="toggleTheme" :icon="iconTheme" :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'"
+                variant="text" size="x-large"></v-btn>
             <v-list v-for="(item, index) in options" :key="index" class="cursor-pointer pt-0 mt-5 text-center"
                 density="compact" nav>
                 <v-list-item :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'" density="comfortable" exact
                     variant="text" tile :to="{ name: item.link }" :aria-label="item.description">
-                    <v-list-item-title class="typingEffect text-caption" :aria-label="item.description" aria-details="Menú" role="menubar">
+                    <v-list-item-title class="typingEffect text-caption" :aria-label="item.description"
+                        aria-details="Menú" role="menubar">
                         {{ item.print }}
                     </v-list-item-title>
                 </v-list-item>
             </v-list>
             <div class="d-flex flex-row mt-16">
-                <v-btn v-for="(item, index) in socialMedia" :key="index" :icon="item.icon" :href="item.link"
-                    target="_blank" :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'" variant="text"
-                    size="large" aria-label="Redes Sociales donde puedes ver más información"></v-btn>
+                <button v-for="(item, index) in socialMedia" :key="index" :href="item.link" target="_blank"
+                    class="mx-3" :class="currentTheme == 'dark' ? 'card-dark' : 'card-light'">
+                    <v-icon :icon="item.icon" aria-label="Redes Sociales donde puedes ver más información"></v-icon>
+                </button>
             </div>
         </div>
     </v-navigation-drawer>

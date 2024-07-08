@@ -15,6 +15,23 @@ onMounted(() => {
     projects.value.push({
         id: 1,
         title: 'Desarrollador Web',
+        company: 'PersonalsDates',
+        year: 2024,
+        skills: [
+            'JavaScript',
+            'PHP',
+            'VueJS',
+            'Laravel',
+            'JWT'
+        ],
+        uri: 'https://personalsdates.com/',
+        image: 'personalsdate.png',
+        alt: 'Imagen del proyecto PersonalsDates'
+    })
+
+    projects.value.push({
+        id: 1,
+        title: 'Desarrollador Web',
         company: 'TouchClick',
         year: 2024,
         skills: [
@@ -99,10 +116,11 @@ const getImageUrl = (name) => {
 <template>
     <v-container fluid>
         <v-card v-for="(item, index) in projects" class="mx-auto mb-5"
-            :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'" variant="plain" max-width="450"
-            min-height="350" :href="item.uri" target="_blank" hover>
-            <img :src="getImageUrl(item.image)" class="align-end" height="200px" width="100%" :alt="item.alt" loading="lazy" cover>
-                <v-card-title v-text="item.company"></v-card-title>
+            :class="currentTheme == 'dark' ? 'card-dark' : 'card-light'" variant="plain" max-width="450"
+            min-height="350" :href="item.uri" target="_blank">
+            <img :src="getImageUrl(item.image)" class="align-end" height="200px" width="100%" :alt="item.alt"
+                loading="lazy">
+            <v-card-title v-text="item.company"></v-card-title>
             </img>
 
             <div class="px-4 mb-2">

@@ -30,20 +30,6 @@ const height = computed(() => {
     return 0
 })
 
-// const phrase = ref('');
-// const author = ref('');
-
-// const fetchPhrase = async () => {
-//     try {
-//         const response = await axios.get('api/phrase');
-//         phrase.value = response.data.phrase;  // Asegúrate de acceder al campo correcto en el objeto de respuesta
-//         author.value = response.data.author;
-//     } catch (error) {
-//         console.error('Error fetching phrase:', error);
-//     }
-// };
-
-// onMounted(fetchPhrase);
 </script>
 
 <template>
@@ -56,7 +42,7 @@ const height = computed(() => {
                 ]">
                     Juan Manuel Antón
                 </p>
-                <code class="text-h5 my-4">
+                <code class="text-h5 my-4" :class="currentTheme == 'dark' ? 'bg-code-dark' : 'bg-code-light'">
                     <div>
                         <p class="typingEffect">
                             console.log('Soy Desarrollador Web')
@@ -81,42 +67,36 @@ const height = computed(() => {
                 </p>
             </v-col>
             <v-col cols="12" md="6" class="d-flex justify-center align-center align-self-center">
-                <v-avatar rounded="0" :size="height <= 400 ? 190 : 350">
-                    <img width="100%" src="@/assets/images/profile-2.png" alt="Perfil" loading="lazy" cover />
-                </v-avatar>
+                <img class="profile" width="80%" src="@/assets/images/profile-2.png" alt="Foto Perfil" loading="lazy" cover />
             </v-col>
-            <!-- <v-col cols="12" v-if="phrase && height > 400">
-                <div class="d-flex flex-column justify-center align-center mt-7">
-                    <p>La frase del día: </p>
-                    <p style="width:50%" class="text-center">
-                        {{ phrase }}
-                    </p>
-                    <p class="text-caption">
-                        "{{ author }}"
-                    </p>
-                </div>
-            </v-col> -->
         </v-row>
     </v-container>
 </template>
 
 <style scoped>
 code {
-    background-color: #202129;
     border-radius: 4px;
     padding: 20px;
     height: 70px;
-    color: white;
     display: flex;
     margin: 0 auto;
     align-items: center;
     width: 100%;
 }
 
+.bg-code-dark {
+    color: rgb(var(--v-theme-on-surface)) !important;
+    background-color: rgb(var(--v-theme-surface)) !important;
+}
+
+.bg-code-light {
+    color: rgb(var(--v-theme-on-surface)) !important;
+    background-color: rgb(var(--v-theme-surface)) !important;
+}
+
 .typingEffect {
     width: 0;
     overflow: hidden;
-    /* Ensure the text is not visible until the typewriter effect*/
     border-right: 2px solid white;
     /* The cursor*/
     font-size: 16px;
@@ -147,5 +127,9 @@ code {
     100% {
         border-color: white;
     }
+}
+
+.profile {
+    filter: drop-shadow(11px 12px 11px rgb(var(--v-theme-surface)))
 }
 </style>

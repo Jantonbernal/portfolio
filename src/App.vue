@@ -30,8 +30,6 @@ const handleMouseMove = (event) => {
 body {
   margin: 0;
   overflow: hidden;
-  /* Evitar el desplazamiento de la barra de desplazamiento */
-  background-color: #f0f0f0;
 }
 
 .app {
@@ -57,17 +55,12 @@ body {
   position: fixed;
   width: 20vw;
   height: 20vh;
-  background-color: rgba(104, 111, 175, 0.5);
-  /* Color de superposición semitransparente */
-  border-radius: 30%;
-  /* Borde redondeado */
+  background-color: rgb(var(--v-theme-surface)) !important;
+  border-radius: 50%;
   pointer-events: none;
-  filter: blur(190px);
-  /* Desenfoque */
+  filter: blur(120px);
   transition: 0.2s ease;
-  /* Transición suave */
   transform: translate(-50%, -50%);
   z-index: 9998;
-  /* Debajo del cursor */
 }
 </style>
