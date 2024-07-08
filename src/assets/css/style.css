@@ -24,20 +24,28 @@ textarea {
     color: rgb(var(--v-theme-primary));
 }
 
-.card-dark, .card-light {
-    transition: transform 2.8s ease;
+.card-dark,
+.card-light {
+    transition: transform 2.8s ease, box-shadow 2.8s ease;
 }
 
 .card-dark:hover {
     color: rgb(94 234 212/1);
     transform: skew(-1deg, -8deg);
-    transition: transform 1.9s ease;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    transition: transform 1.9s ease, box-shadow 1.9s ease;
+    box-shadow: rgba(38, 57, 77, 1) 0px 20px 30px -10px,
+        rgba(0, 0, 0, 1) 0px 10px 35px -5px;
 }
 
 .card-light:hover {
     color: rgb(var(--v-theme-primary));
     transform: skew(-1deg, -8deg);
-    transition: transform 1.9s ease;
-    box-shadow: rgba(14, 63, 126, 0.06) 0px 0px 0px 1px, rgba(42, 51, 70, 0.03) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 2px 2px -1px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.03) 0px 5px 5px -2.5px, rgba(42, 51, 70, 0.03) 0px 10px 10px -5px, rgba(42, 51, 70, 0.03) 0px 24px 24px -8px;
+    transition: transform 1.9s ease, box-shadow 1.9s ease;
+    box-shadow: rgba(14, 63, 126, 0.16) 0px 0px 0px 1px,
+        rgba(42, 51, 70, 0.13) 0px 1px 1px -0.5px,
+        rgba(42, 51, 70, 0.14) 0px 2px 2px -1px,
+        rgba(42, 51, 70, 0.14) 0px 3px 3px -1.5px,
+        rgba(42, 51, 70, 0.43) 0px 5px 5px -2.5px,
+        rgba(42, 51, 70, 0.33) 0px 10px 10px -5px,
+        rgba(42, 51, 70, 0.43) 0px 24px 24px -8px;
 }
