@@ -14,11 +14,28 @@ onMounted(() => {
     experiences.value.push({
         id: 1,
         title: 'Desarrollador Web',
+        company: 'Objetio Virtual',
+        country: 'Argentina',
+        from: '2024 JUN',
+        to: '2024 JUL',
+        description: 'Desarrolle el sitio web administrable OMBU, dodne el cliente puede visualizar productos, tiene un apartado que una vez iniciado sesión pueda ver diferentes detalles de los productos solo accesibles estando logueado, todo el contenido es administrable',
+        skills: [
+            'JavaScript',
+            'PHP',
+            'VueJS',
+            'Laravel',
+            'JWT'
+        ],
+    })
+
+    experiences.value.push({
+        id: 1,
+        title: 'Desarrollador Web',
         company: 'PersonalsDates',
         country: 'USA',
         from: '2024 JUN',
         to: '2024 JUL',
-        description: 'Desarrollo del sitio web de citas PersonalsDates',
+        description: 'Desarrollo del sitio web de citas PersonalsDates administrable, los usuarios subir imagenes, videos, tiene un editor de texto para ingresar el contenido de su bio de la manera mas personalizada posible',
         skills: [
             'JavaScript',
             'PHP',

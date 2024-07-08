@@ -15,6 +15,23 @@ onMounted(() => {
     projects.value.push({
         id: 1,
         title: 'Desarrollador Web',
+        company: 'Objetivo Virtual',
+        year: 2024,
+        skills: [
+            'JavaScript',
+            'PHP',
+            'VueJS',
+            'Laravel',
+            'JWT'
+        ],
+        uri: null,
+        image: 'ombu.png',
+        alt: 'Imagen del proyecto Ombu'
+    })
+
+    projects.value.push({
+        id: 1,
+        title: 'Desarrollador Web',
         company: 'PersonalsDates',
         year: 2024,
         skills: [
