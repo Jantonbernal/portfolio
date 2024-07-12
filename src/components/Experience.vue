@@ -20,11 +20,13 @@ onMounted(() => {
         to: '2024 JUL',
         description: 'Desarrolle el sitio web administrable OMBU, dodne el cliente puede visualizar productos, tiene un apartado que una vez iniciado sesión pueda ver diferentes detalles de los productos solo accesibles estando logueado, todo el contenido es administrable',
         skills: [
-            'JavaScript',
-            'PHP',
-            'VueJS',
-            'Laravel',
-            'JWT'
+            { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
+            { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
+            { name: 'VueJS', icon: 'mdi mdi-vuejs', color: '#4FC08D' },
+            { name: 'Laravel', icon: 'mdi mdi-laravel', color: '#FF2D20' },
+            { name: 'Git', icon: 'mdi mdi-git', color: '#F05032' },
+            { name: 'MySQL', icon: 'mdi mdi-database', color: '#4479A1' },
+            { name: 'JWT', icon: null, color: '#000000' },
         ],
     })
 
@@ -37,11 +39,13 @@ onMounted(() => {
         to: '2024 JUL',
         description: 'Desarrollo del sitio web de citas PersonalsDates administrable, los usuarios subir imagenes, videos, tiene un editor de texto para ingresar el contenido de su bio de la manera mas personalizada posible',
         skills: [
-            'JavaScript',
-            'PHP',
-            'VueJS',
-            'Laravel',
-            'JWT'
+            { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
+            { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
+            { name: 'VueJS', icon: 'mdi mdi-vuejs', color: '#4FC08D' },
+            { name: 'Laravel', icon: 'mdi mdi-laravel', color: '#FF2D20' },
+            { name: 'Git', icon: 'mdi mdi-git', color: '#F05032' },
+            { name: 'MySQL', icon: 'mdi mdi-database', color: '#4479A1' },
+            { name: 'JWT', icon: null, color: '#000000' },
         ],
     })
 
@@ -54,13 +58,15 @@ onMounted(() => {
         to: 'actual',
         description: 'Analisis de requerimientos, diseño de base de datos y gestión de proyectos de software',
         skills: [
-            'JavaScript',
-            'PHP',
-            'VueJS',
-            'Laravel',
-            'Trello',
-            'Lucidchart',
-            'Git'
+            { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
+            { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
+            { name: 'VueJS', icon: 'mdi mdi-vuejs', color: '#4FC08D' },
+            { name: 'Laravel', icon: 'mdi mdi-laravel', color: '#FF2D20' },
+            { name: 'Git', icon: 'mdi mdi-git', color: '#F05032' },
+            { name: 'MySQL', icon: 'mdi mdi-database', color: '#4479A1' },
+            { name: 'JWT', icon: null, color: '#000000' },
+            { name: 'Trello', icon: 'mdi mdi-trello', color: '#0079BF' },
+            { name: 'LucidChart', icon: null, color: '#ED8B00' },
         ],
     })
 
@@ -73,11 +79,13 @@ onMounted(() => {
         to: '2024 ABRI',
         description: 'Colaboración con el equipo para conocer los requisitos y las especificaciones de los clientes, HelpDesk a los usuarios de aplicación respecto a fallos y funcionalidades de la aplicación web, Validaciones y nuevas funcionalidades sobre la reserva de paquetes de hotelería ',
         skills: [
-            'JavaScript',
-            'PHP',
-            'VueJS',
-            'Laravel',
-            'Git'
+            { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
+            { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
+            { name: 'VueJS', icon: 'mdi mdi-vuejs', color: '#4FC08D' },
+            { name: 'Laravel', icon: 'mdi mdi-laravel', color: '#FF2D20' },
+            { name: 'Git', icon: 'mdi mdi-git', color: '#F05032' },
+            { name: 'MySQL', icon: 'mdi mdi-database', color: '#4479A1' },
+            { name: 'JWT', icon: null, color: '#000000' },
         ],
     })
 
@@ -90,14 +98,14 @@ onMounted(() => {
         to: '2023 DIC',
         description: 'Desarrolle la aplicación web SGC (Sistema de Gestión Comercial), desarrollado con Laravel 8 y Vuejs 2, Exponer APIS para la aplicación movil y el sitio web de Lustro, Diseño, desarrollo y mantenimiento de la aplicación web, Integración de servicios externos, como correo electrónico, facturación electrónica, embudo de ventas con pipedrive. ',
         skills: [
-            'JavaScript',
-            'PHP',
-            'VueJS',
-            'Laravel',
-            'API',
-            'APISPERU',
-            'PipeDrive',
-            'Git'
+            { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
+            { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
+            { name: 'VueJS', icon: 'mdi mdi-vuejs', color: '#4FC08D' },
+            { name: 'Laravel', icon: 'mdi mdi-laravel', color: '#FF2D20' },
+            { name: 'Git', icon: 'mdi mdi-git', color: '#F05032' },
+            { name: 'MySQL', icon: 'mdi mdi-database', color: '#4479A1' },
+            { name: 'JWT', icon: null, color: '#000000' },
+            { name: null, icon: 'mdi mdi-api', color: '#000000' },
         ],
     })
 
@@ -110,12 +118,14 @@ onMounted(() => {
         to: '2020 JUN',
         description: 'Desarrolle la aplicación web de cotización, compra y venta de vehículos automotores a nivel nacional (Chiclayo, Lima, Trujillo), Aplicación web multi empresa / multi sucursal, Desarrollado con Laravel y Vuejs, integrando los procesos de la aplicación web con el ERP SAP Business ONE - SAP Hana, utilizando SQL Server 2012 como SGBD, Participación en reuniones y presentaciones técnicas',
         skills: [
-            'JavaScript',
-            'PHP',
-            'VueJS',
-            'Laravel',
-            'SAP BUSINESS ONE',
-            'Git'
+            { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
+            { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
+            { name: 'VueJS', icon: 'mdi mdi-vuejs', color: '#4FC08D' },
+            { name: 'Laravel', icon: 'mdi mdi-laravel', color: '#FF2D20' },
+            { name: 'Git', icon: 'mdi mdi-git', color: '#F05032' },
+            { name: 'MySQL', icon: 'mdi mdi-database', color: '#4479A1' },
+            { name: 'JWT', icon: null, color: '#000000' },
+            { name: 'SAP BUSINESS ONE', icon: null, color: '#0FAAFF' },
         ],
     })
 
@@ -128,8 +138,9 @@ onMounted(() => {
         to: '2018 MAR',
         description: 'Desarrolle el sitio web oficial del colegio de estadísticos del Perú – región Lambayeque',
         skills: [
-            'PHP',
-            'Laravel',
+            { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
+            { name: 'Laravel', icon: 'mdi mdi-laravel', color: '#FF2D20' },
+            { name: 'MySQL', icon: 'mdi mdi-database', color: '#4479A1' },
         ],
     })
 })
@@ -140,10 +151,6 @@ onMounted(() => {
     <v-container fluid>
         <v-card v-for="(item, index) in experiences" :key="index" class="mx-auto mb-15"
             :class="currentTheme == 'dark' ? 'card-dark' : 'card-light'" max-width="550" variant="plain">
-            <template v-slot:loader="{ isActive }">
-                <v-progress-linear :active="isActive" color="deep-purple" height="4" indeterminate></v-progress-linear>
-            </template>
-
             <v-card-item>
                 <v-card-title>
                     {{ item.title }}
@@ -167,8 +174,9 @@ onMounted(() => {
 
             <div class="px-4 mb-2">
                 <v-chip label :class="currentTheme == 'dark' ? 'primary' : 'info'" class="ma-2"
-                    v-for="(skill, x) in item.skills" :key="x">
-                    <p class="font-weight-bold"> {{ skill }} </p>
+                    v-for="(skill, x) in item.skills" :key="x" :color="!skill.icon ? skill.color : ''">
+                    <v-icon v-if="skill.icon" :icon="skill.icon" :color="skill.color" :size="!skill.name ? 'large' : 'default'" start></v-icon>
+                    <p v-if="skill.name"> {{ skill.name }} </p>
                 </v-chip>
             </div>
         </v-card>

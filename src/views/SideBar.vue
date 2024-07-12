@@ -1,10 +1,13 @@
 <script setup>
 import { computed, onMounted, ref, watch } from 'vue'
 import { storeToRefs } from 'pinia';
+import { useRouter } from "vue-router";
 import { useDisplay } from 'vuetify'
 
 import { useThemeStore } from "@/stores/theme.js";
 import { useMenuStore } from "@/stores/menu.js";
+
+const router = useRouter();
 
 const { name } = useDisplay()
 // Store Theme
@@ -122,26 +125,33 @@ const iterateMenu = () => {
 
 iterateMenu()
 
+const goTo = (data = null) => {
+    console.log(data);
+    router.push({ name: data });
+}
+
 </script>
 
 <template>
     <v-navigation-drawer v-model="drawer" class="pa-8" floating app :width="height >= 500 ? 320 : 257">
         <div class="d-flex flex-column justify-space-between align-center">
-            <v-btn @click="toggleTheme" :icon="iconTheme" :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'"
-                variant="text" size="x-large"></v-btn>
-            <v-list v-for="(item, index) in options" :key="index" class="cursor-pointer pt-0 mt-5 text-center"
-                density="compact" nav>
-                <v-list-item :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'" density="comfortable" exact
-                    variant="text" tile :to="{ name: item.link }" :aria-label="item.description">
-                    <v-list-item-title class="typingEffect text-caption" :aria-label="item.description"
-                        aria-details="Menú" role="menubar">
-                        {{ item.print }}
-                    </v-list-item-title>
-                </v-list-item>
-            </v-list>
+            <div class="wrapper">
+                <input type="checkbox" name="checkbox" class="switch" @click="toggleTheme">
+            </div>
+
+            <ul class="ul">
+                <li v-for="(item, index) in options" :key="index" class="pt-0 mt-5 text-center li"
+                    @click.prevent="goTo(item.link)">
+                    <button class="button typingEffect text-caption" aria-label="Menú princiapl del sitio web">
+                        <p class="p">
+                            {{ item.print }}
+                        </p>
+                    </button>
+                </li>
+            </ul>
             <div class="d-flex flex-row mt-16">
-                <button v-for="(item, index) in socialMedia" :key="index" :href="item.link" target="_blank"
-                    class="mx-3" :class="currentTheme == 'dark' ? 'card-dark' : 'card-light'">
+                <button v-for="(item, index) in socialMedia" :key="index" :href="item.link" target="_blank" class="mx-3"
+                    :class="currentTheme == 'dark' ? 'card-dark' : 'card-light'">
                     <v-icon :icon="item.icon" aria-label="Redes Sociales donde puedes ver más información"></v-icon>
                 </button>
             </div>
@@ -150,6 +160,10 @@ iterateMenu()
 </template>
 
 <style scoped>
+/**
+ * Efecto de Tipeo
+ *
+ */
 .typingEffect {
     width: 0;
     overflow: hidden;
@@ -184,17 +198,241 @@ iterateMenu()
         border-color: white;
     }
 }
+
+/**
+ * SideBar
+ *
+ */
+.ul {
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    list-style: none;
+}
+
+.li {
+    margin-bottom: 0px;
+}
+
+.button {
+    background-color: transparent;
+    font-family: sans-serif;
+    color: rgb(var(--v-theme-on-surface));
+    border: none;
+    font-size: 13px !important;
+    font-weight: 700;
+    padding: 10px 30px;
+    position: relative;
+    padding-left: 11px;
+    text-align: center;
+    transition: 0.1s;
+    z-index: 1;
+}
+
+.p {
+    z-index: 2;
+    position: relative;
+}
+
+.button:hover {
+    color: rgb(var(--v-theme-on-surface));
+    text-align: center;
+}
+
+.button:hover::before {
+    transform: rotate(0deg);
+    width: 100%;
+    height: 40px;
+    top: 2px;
+    border-radius: 3px;
+    background-color: #75a5b823;
+}
+
+.button::before {
+    content: "";
+    border-radius: 1px;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #75a5b823;
+    left: -10px;
+    top: 19px;
+    transform: rotate(225deg);
+    transition: 0.3s;
+    z-index: -1;
+}
+
+.button:active::before {
+    background-color: #75a5b823;
+}
+
+/**
+ * Switch Theme
+ */
+.switch {
+    position: relative;
+    width: 110px;
+    height: 40px;
+    margin: 0px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: rgb(4, 52, 73);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 25px;
+    transition: background-image .7s ease-in-out;
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.switch:checked {
+    background-color: rgb(0, 195, 255);
+    background-size: cover;
+    transition: background-image 1s ease-in-out;
+}
+
+.switch:after {
+    content: '';
+    width: 36px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    transform: translateX(0px);
+    animation: off .7s forwards cubic-bezier(.8, .5, .2, 1.4);
+    box-shadow: inset 5px -5px 4px rgba(53, 53, 53, 0.3);
+}
+
+@keyframes off {
+    0% {
+        transform: translateX(80px);
+        width: 46px;
+    }
+
+    50% {
+        width: 75px;
+        border-radius: 25px;
+    }
+
+    100% {
+        transform: translateX(0px);
+        width: 36px;
+    }
+}
+
+.switch:checked:after {
+    animation: on .7s forwards cubic-bezier(.8, .5, .2, 1.4);
+    box-shadow: inset -5px -5px 4px rgba(53, 53, 53, 0.3);
+}
+
+@keyframes on {
+    0% {
+        transform: translateX(0px);
+        width: 46px;
+    }
+
+    50% {
+        width: 75px;
+        border-radius: 25px;
+    }
+
+    100% {
+        transform: translateX(70px);
+        width: 36px;
+    }
+}
+
+.switch:checked:before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    left: 15px;
+    top: 5px;
+    transform-origin: 53px 10px;
+    background-color: transparent;
+    box-shadow: 5px -1px 0px #fff;
+    filter: blur(0px);
+    animation: sun .7s forwards ease;
+}
+
+@keyframes sun {
+    0% {
+        transform: rotate(170deg);
+        background-color: transparent;
+        box-shadow: 5px -1px 0px #fff;
+        filter: blur(0px);
+    }
+
+    50% {
+        background-color: transparent;
+        box-shadow: 5px -1px 0px #fff;
+        filter: blur(0px);
+    }
+
+    90% {
+        background-color: #f5daaa;
+        box-shadow: 0px 0px 10px #f5deb4,
+            0px 0px 20px #f5deb4,
+            0px 0px 30px #f5deb4,
+            inset 0px 0px 2px #efd3a3;
+        filter: blur(1px);
+    }
+
+    100% {
+        transform: rotate(0deg);
+        background-color: #f5daaa;
+        box-shadow: 0px 0px 10px #f5deb4,
+            0px 0px 20px #f5deb4,
+            0px 0px 30px #f5deb4,
+            inset 0px 0px 2px #efd3a3;
+        filter: blur(1px);
+    }
+}
+
+.switch:before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    left: 1px;
+    top: 6px;
+    filter: blur(1px);
+    background-color: #f5daaa;
+    box-shadow: 0px 0px 10px #f5deb4,
+        0px 0px 20px #f5deb4,
+        0px 0px 30px #f5deb4,
+        inset 0px 0px 2px #efd3a3;
+    transform-origin: 53px 10px;
+    animation: moon .7s forwards ease;
+}
+
+@keyframes moon {
+    0% {
+        transform: rotate(0deg);
+        filter: blur(1px);
+    }
+
+    50% {
+        filter: blur(1px);
+    }
+
+    90% {
+        background-color: transparent;
+        box-shadow: 5px -1px 0px #fff;
+        filter: blur(0px);
+    }
+
+    100% {
+        transform: rotate(170deg);
+        background-color: transparent;
+        box-shadow: 5px -1px 0px #fff;
+        filter: blur(0px);
+    }
+}
 </style>
-
-<!-- <style>
-html,
-body,
-#app,
-.v-application {
-    height: 100%;
-}
-
-.v-application--wrap {
-    min-height: 100%;
-}
-</style> -->

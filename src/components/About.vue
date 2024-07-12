@@ -45,7 +45,7 @@ const height = computed(() => {
                 <code class="text-h5 my-4" :class="currentTheme == 'dark' ? 'bg-code-dark' : 'bg-code-light'">
                     <div>
                         <p class="typingEffect">
-                            console.log('Soy Desarrollador Web')
+                            console.log("Soy Desarrollador Web")
                         </p>
                     </div>
                 </code>
@@ -67,7 +67,7 @@ const height = computed(() => {
                 </p>
             </v-col>
             <v-col cols="12" md="6" class="d-flex justify-center align-center align-self-center">
-                <img class="profile" width="80%" src="@/assets/images/profile-2.png" alt="Foto Perfil" loading="lazy" cover />
+                <img class="profile" :width="height <= 400 ? '60%' : '80%' " src="@/assets/images/profile-2.png" alt="Foto Perfil" loading="lazy" cover />
             </v-col>
         </v-row>
     </v-container>

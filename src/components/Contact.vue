@@ -112,7 +112,6 @@ watch(dataEndPoint, (received) => {
 
 watch(errorEndPoint, (received) => {
     if (received) {
-        console.log(received);
         Swal.fire({
             title: "Error!",
             text: "Ocurrio un error, vuelva intentar lo mas tarde o comuniquese conmigo por alguna de mis redes sociales",
@@ -127,8 +126,8 @@ watch(errorEndPoint, (received) => {
 
 <template>
     <v-container>
-        <v-card class="mx-auto" :class="currentTheme == 'dark' ? 'hover-dark' : 'hover-light'"
-            prepend-icon="mdi mdi-email-arrow-right-outline" title="Hola, si necesitas ayuda, escríbeme con mucho gusto te puedo ayudar">
+        <v-card class="mx-auto" prepend-icon="mdi mdi-email-arrow-right-outline"
+            title="Hola, si necesitas ayuda, escríbeme con mucho gusto te puedo ayudar">
             <v-container fluid>
                 <v-row>
                     <v-col cols="12" md="5">
@@ -160,15 +159,70 @@ watch(errorEndPoint, (received) => {
                 </v-row>
             </v-container>
             <v-divider class="mt-3"></v-divider>
-            <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn prepend-icon="mdi mdi-email-arrow-right-outline" block @click="save" :disabled="loading">
-                    <template v-slot:prepend>
-                        <v-icon :class="currentTheme == 'dark' ? 'primary' : 'info'"></v-icon>
-                    </template>
-                    Enviar
-                </v-btn>
+            <v-card-actions class="d-flex justify-center align-center">
+                <button class="button-send" @click="save" :disabled="loading">
+                    Enviar Mensaje
+                    <v-icon icon="mdi mdi-email-arrow-right-outline" size="large"></v-icon>
+                </button>
             </v-card-actions>
         </v-card>
     </v-container>
 </template>
+
+<style scoped>
+.button-send {
+    height: 2.8em;
+    width: 60%;
+    background: transparent;
+    -webkit-animation: jello-horizontal 0.9s both;
+    animation: jello-horizontal 0.9s both;
+    border: 2px solid rgb(var(--v-theme-primary));
+    outline: none;
+    color: rgb(var(--v-theme-primary));
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.button-send:hover {
+    background: rgb(var(--v-theme-primary));
+    color: rgb(var(--v-theme-on-surface));
+    animation: squeeze3124 0.9s both;
+}
+
+@keyframes squeeze3124 {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        -webkit-transform: scale3d(0.95, 1.05, 1);
+        transform: scale3d(0.95, 1.05, 1);
+    }
+
+    75% {
+        -webkit-transform: scale3d(1.05, 0.95, 1);
+        transform: scale3d(1.05, 0.95, 1);
+    }
+
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+</style>
