@@ -18,7 +18,7 @@ onMounted(() => {
         country: 'Argentina',
         from: '2024 JUN',
         to: '2024 JUL',
-        description: 'Desarrolle el sitio web administrable OMBU, dodne el cliente puede visualizar productos, tiene un apartado que una vez iniciado sesión pueda ver diferentes detalles de los productos solo accesibles estando logueado, todo el contenido es administrable',
+        description: 'Desarrolle el sitio web administrable OMBU, donde el cliente puede visualizar productos, tiene un apartado que una vez iniciado sesión pueda ver diferentes detalles de los productos solo accesibles estando logueado, todo el contenido es administrable (aun está en pruebas)',
         skills: [
             { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
             { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },

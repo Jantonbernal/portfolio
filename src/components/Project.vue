@@ -26,7 +26,7 @@ onMounted(() => {
             { name: 'MySQL', icon: 'mdi mdi-database', color: '#4479A1' },
             { name: 'JWT', icon: null, color: '#000000' },
         ],
-        uri: null,
+        uri: 'https://objetivovirtualqa.com.ar/ombu/website/',
         image: 'ombu.png',
         alt: 'Imagen del proyecto Ombu'
     })
