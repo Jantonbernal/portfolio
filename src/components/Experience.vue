@@ -16,9 +16,28 @@ onMounted(() => {
         title: 'Desarrollador Web',
         company: 'Objetio Virtual',
         country: 'Argentina',
+        from: '2024 AGO',
+        to: '2024 SEP',
+        description: 'Desarrolle el panel de administración de la empresa, en la cual lleva el control de ingresos/egresos de la misma, realizan cotizaciones, proyectos, emision de comprobantes, pagos, generación de reportes, etc',
+        skills: [
+            { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
+            { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
+            { name: 'VueJS', icon: 'mdi mdi-vuejs', color: '#4FC08D' },
+            { name: 'Laravel', icon: 'mdi mdi-laravel', color: '#FF2D20' },
+            { name: 'Git', icon: 'mdi mdi-git', color: '#F05032' },
+            { name: 'MySQL', icon: 'mdi mdi-database', color: '#4479A1' },
+            { name: 'JWT', icon: null, color: '#000000' },
+        ],
+    })
+
+    experiences.value.push({
+        id: 1,
+        title: 'Desarrollador Web',
+        company: 'Objetio Virtual',
+        country: 'Argentina',
         from: '2024 JUN',
         to: '2024 JUL',
-        description: 'Desarrolle el sitio web administrable OMBU, donde el cliente puede visualizar productos, tiene un apartado que una vez iniciado sesión pueda ver diferentes detalles de los productos solo accesibles estando logueado, todo el contenido es administrable (aun está en pruebas)',
+        description: 'Desarrolle el sitio web administrable OMBU, donde el cliente puede visualizar productos, tiene un apartado que una vez iniciado sesión pueda ver diferentes detalles de los productos solo accesibles estando logueado, todo el contenido es administrable',
         skills: [
             { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
             { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
