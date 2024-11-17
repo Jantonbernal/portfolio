@@ -14,11 +14,31 @@ onMounted(() => {
     experiences.value.push({
         id: 1,
         title: 'Desarrollador Web',
+        company: 'MistersWeb',
+        country: 'Perú',
+        from: '2024 AGO',
+        to: '2024 NOV',
+        description: 'Desarrolle el sitio web de suscripciones para postear vehículos, ademas desarrolle el panel de administración de la empresa, el cual permite la administración total del sitio web, como cambiar logo, administrar marcas, modelos, años de fab y modelo, versiones, planes de suscripción, etc',
+        skills: [
+            { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
+            { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
+            { name: 'VueJS', icon: 'mdi mdi-vuejs', color: '#4FC08D' },
+            { name: 'Laravel', icon: 'mdi mdi-laravel', color: '#FF2D20' },
+            { name: 'Git', icon: 'mdi mdi-git', color: '#F05032' },
+            { name: 'MySQL', icon: 'mdi mdi-database', color: '#4479A1' },
+            { name: 'JWT', icon: null, color: '#000000' },
+            { name: null, icon: 'mdi mdi-api', color: '#000000' },
+        ],
+    })
+
+    experiences.value.push({
+        id: 1,
+        title: 'Desarrollador Web',
         company: 'Objetio Virtual',
         country: 'Argentina',
         from: '2024 AGO',
         to: '2024 SEP',
-        description: 'Desarrolle el panel de administración de la empresa, en la cual lleva el control de ingresos/egresos de la misma, realizan cotizaciones, proyectos, emision de comprobantes, pagos, generación de reportes, etc',
+        description: 'Desarrolle el panel de administración de la empresa, el cual lleva el control de ingresos/egresos de la misma, realizan cotizaciones, proyectos, emision de comprobantes, pagos, generación de reportes, etc',
         skills: [
             { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
             { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
@@ -65,27 +85,6 @@ onMounted(() => {
             { name: 'Git', icon: 'mdi mdi-git', color: '#F05032' },
             { name: 'MySQL', icon: 'mdi mdi-database', color: '#4479A1' },
             { name: 'JWT', icon: null, color: '#000000' },
-        ],
-    })
-
-    experiences.value.push({
-        id: 1,
-        title: 'Team Leader',
-        company: 'DATAMATRIX',
-        country: 'México',
-        from: '2024 ABRI',
-        to: 'actual',
-        description: 'Analisis de requerimientos, diseño de base de datos y gestión de proyectos de software',
-        skills: [
-            { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
-            { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
-            { name: 'VueJS', icon: 'mdi mdi-vuejs', color: '#4FC08D' },
-            { name: 'Laravel', icon: 'mdi mdi-laravel', color: '#FF2D20' },
-            { name: 'Git', icon: 'mdi mdi-git', color: '#F05032' },
-            { name: 'MySQL', icon: 'mdi mdi-database', color: '#4479A1' },
-            { name: 'JWT', icon: null, color: '#000000' },
-            { name: 'Trello', icon: 'mdi mdi-trello', color: '#0079BF' },
-            { name: 'LucidChart', icon: null, color: '#ED8B00' },
         ],
     })
 
@@ -194,7 +193,8 @@ onMounted(() => {
             <div class="px-4 mb-2">
                 <v-chip label :class="currentTheme == 'dark' ? 'primary' : 'info'" class="ma-2"
                     v-for="(skill, x) in item.skills" :key="x" :color="!skill.icon ? skill.color : ''">
-                    <v-icon v-if="skill.icon" :icon="skill.icon" :color="skill.color" :size="!skill.name ? 'large' : 'default'" start></v-icon>
+                    <v-icon v-if="skill.icon" :icon="skill.icon" :color="skill.color"
+                        :size="!skill.name ? 'large' : 'default'" start></v-icon>
                     <p v-if="skill.name"> {{ skill.name }} </p>
                 </v-chip>
             </div>

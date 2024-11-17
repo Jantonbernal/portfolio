@@ -15,6 +15,26 @@ onMounted(() => {
     projects.value.push({
         id: 1,
         title: 'Desarrollador Web',
+        company: 'MistersWeb',
+        year: 2024,
+        skills: [
+            { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
+            { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
+            { name: 'VueJS', icon: 'mdi mdi-vuejs', color: '#4FC08D' },
+            { name: 'Laravel', icon: 'mdi mdi-laravel', color: '#FF2D20' },
+            { name: 'Git', icon: 'mdi mdi-git', color: '#F05032' },
+            { name: 'MySQL', icon: 'mdi mdi-database', color: '#4479A1' },
+            { name: 'JWT', icon: null, color: '#000000' },
+            { name: 'Task Shedules', icon: null, color: '#000000' },
+        ],
+        uri: 'https://rocamiones.com/',
+        image: 'rocamiones.png',
+        alt: 'Imagen del proyecto Rocamiones'
+    })
+
+    projects.value.push({
+        id: 1,
+        title: 'Desarrollador Web',
         company: 'Objetivo Virtual',
         year: 2024,
         skills: [
