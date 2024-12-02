@@ -14,7 +14,7 @@ const projects = ref([])
 onMounted(() => {
     projects.value.push({
         id: 1,
-        title: 'Desarrollador Web',
+        title: 'Desarrollador Web (En pruebas)',
         company: 'MistersWeb',
         year: 2024,
         skills: [
