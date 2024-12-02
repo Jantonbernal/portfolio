@@ -15,7 +15,7 @@ onMounted(() => {
     projects.value.push({
         id: 1,
         title: 'Desarrollador Web (En pruebas)',
-        company: 'MistersWeb',
+        company: 'MistersWeb (En pruebas)',
         year: 2024,
         skills: [
             { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },

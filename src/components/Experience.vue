@@ -18,7 +18,7 @@ onMounted(() => {
         country: 'Perú',
         from: '2024 AGO',
         to: '2024 NOV',
-        description: 'Desarrolle el sitio web de suscripciones para postear vehículos, ademas desarrolle el panel de administración de la empresa, el cual permite la administración total del sitio web, como cambiar logo, administrar marcas, modelos, años de fab y modelo, versiones, planes de suscripción, etc',
+        description: 'Diseñé y desarrollé un sitio web de suscripciones enfocado en la publicación de vehículos, complementado con un panel de administración empresarial. Este panel permite la gestión integral del sitio, incluyendo funciones como la personalización del logotipo, la administración de marcas, modelos, años de fabricación, versiones, y la configuración de planes de suscripción, entre otras herramientas.',
         skills: [
             { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
             { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
@@ -38,7 +38,7 @@ onMounted(() => {
         country: 'Argentina',
         from: '2024 AGO',
         to: '2024 SEP',
-        description: 'Desarrolle el panel de administración de la empresa, el cual lleva el control de ingresos/egresos de la misma, realizan cotizaciones, proyectos, emision de comprobantes, pagos, generación de reportes, etc',
+        description: 'Desarrollé un panel de administración empresarial que centraliza y optimiza las operaciones clave de la empresa. Este sistema permite llevar un control detallado de ingresos y egresos, gestionar cotizaciones y proyectos, emitir comprobantes, registrar pagos, y generar reportes completos para la toma de decisiones estratégicas',
         skills: [
             { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
             { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
@@ -57,7 +57,7 @@ onMounted(() => {
         country: 'Argentina',
         from: '2024 JUN',
         to: '2024 JUL',
-        description: 'Desarrolle el sitio web administrable OMBU, donde el cliente puede visualizar productos, tiene un apartado que una vez iniciado sesión pueda ver diferentes detalles de los productos solo accesibles estando logueado, todo el contenido es administrable',
+        description: 'Desarrollé el sitio web administrable OMBU, diseñado para ofrecer una experiencia dinámica y personalizada a los usuarios. El cliente puede explorar productos y, al iniciar sesión, acceder a información exclusiva y detallada solo disponible para usuarios autenticados. Todo el contenido del sitio, incluidos los productos y las secciones especiales, es completamente administrable a través de un panel de control intuitivo y flexible.',
         skills: [
             { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
             { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
@@ -76,7 +76,7 @@ onMounted(() => {
         country: 'USA',
         from: '2024 JUN',
         to: '2024 JUL',
-        description: 'Desarrollo del sitio web de citas PersonalsDates administrable, los usuarios subir imagenes, videos, tiene un editor de texto para ingresar el contenido de su bio de la manera mas personalizada posible',
+        description: 'Desarrollé el sitio web administrable PersonalsDates, una plataforma de citas diseñada para ofrecer una experiencia altamente personalizada. Los usuarios pueden subir imágenes y videos, además de utilizar un editor de texto avanzado para personalizar su biografía con total libertad. Todo el contenido del sitio es administrable, lo que permite gestionar usuarios, medios y configuraciones de manera eficiente desde un panel intuitivo',
         skills: [
             { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
             { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
@@ -95,7 +95,7 @@ onMounted(() => {
         country: 'Perú',
         from: '2024 ENE',
         to: '2024 ABRI',
-        description: 'Colaboración con el equipo para conocer los requisitos y las especificaciones de los clientes, HelpDesk a los usuarios de aplicación respecto a fallos y funcionalidades de la aplicación web, Validaciones y nuevas funcionalidades sobre la reserva de paquetes de hotelería ',
+        description: 'Brindé soporte HelpDesk a los usuarios de la aplicación web, resolviendo incidencias relacionadas con fallos y funcionalidades. Además, participé en la validación y desarrollo de nuevas funcionalidades centradas en la reserva de paquetes de hotelería, optimizando la experiencia del usuario y asegurando la calidad del sistema ',
         skills: [
             { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
             { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
@@ -114,7 +114,7 @@ onMounted(() => {
         country: 'Perú',
         from: '2021 AGO',
         to: '2023 DIC',
-        description: 'Desarrolle la aplicación web SGC (Sistema de Gestión Comercial), desarrollado con Laravel 8 y Vuejs 2, Exponer APIS para la aplicación movil y el sitio web de Lustro, Diseño, desarrollo y mantenimiento de la aplicación web, Integración de servicios externos, como correo electrónico, facturación electrónica, embudo de ventas con pipedrive. ',
+        description: 'Desarrollé la aplicación web SGC (Sistema de Gestión Comercial) utilizando Laravel 8 para el backend y Vue.js 2 para el frontend, asegurando una arquitectura moderna y eficiente. Implementé y expuse APIs para integrarlas con la aplicación móvil y el sitio web de Lustro. Además, fui responsable del diseño, desarrollo y mantenimiento continuo de la aplicación web, incluyendo la integración de servicios externos como correo electrónico, facturación electrónica y la implementación de un embudo de ventas mediante Pipedrive',
         skills: [
             { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
             { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
@@ -134,7 +134,7 @@ onMounted(() => {
         country: 'Perú',
         from: '2018 AGO',
         to: '2020 JUN',
-        description: 'Desarrolle la aplicación web de cotización, compra y venta de vehículos automotores a nivel nacional (Chiclayo, Lima, Trujillo), Aplicación web multi empresa / multi sucursal, Desarrollado con Laravel y Vuejs, integrando los procesos de la aplicación web con el ERP SAP Business ONE - SAP Hana, utilizando SQL Server 2012 como SGBD, Participación en reuniones y presentaciones técnicas',
+        description: 'Desarrollé una aplicación web para la cotización, compra y venta de vehículos automotores a nivel nacional, abarcando principales ciudades como Chiclayo, Lima y Trujillo. La plataforma fue diseñada como una solución multiempresa y multisucursal, utilizando Laravel para el backend y Vue.js para el frontend. Integré los procesos de la aplicación con el ERP SAP Business ONE - SAP HANA, como sistema de gestión de bases de datos se uso SQL Server 2012. Además, participé activamente en reuniones y presentaciones técnicas para coordinar requerimientos y presentar avances del proyecto',
         skills: [
             { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
             { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
@@ -154,7 +154,7 @@ onMounted(() => {
         country: 'Perú',
         from: '2018 ENE',
         to: '2018 MAR',
-        description: 'Desarrolle el sitio web oficial del colegio de estadísticos del Perú – región Lambayeque',
+        description: 'Desarrollé el sitio web oficial del Colegio de Estadísticos del Perú – Región Lambayeque, proporcionando una plataforma moderna y funcional que representa la identidad institucional. El sitio incluye secciones informativas, recursos para los miembros y herramientas de gestión administrativa, todo diseñado para facilitar la interacción entre la organización y sus afiliados.',
         skills: [
             { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
             { name: 'Laravel', icon: 'mdi mdi-laravel', color: '#FF2D20' },
