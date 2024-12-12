@@ -27,6 +27,7 @@ onMounted(() => {
             { name: 'Git', icon: 'mdi mdi-git', color: '#F05032' },
             { name: 'MySQL', icon: 'mdi mdi-database', color: '#4479A1' },
             { name: 'JWT', icon: null, color: '#000000' },
+            { name: 'MercadoPago', icon: 'mdi mdi-credit-card-outline', color: '#4479A1' },
             { name: null, icon: 'mdi mdi-api', color: '#000000' },
         ],
     })
