@@ -18,6 +18,27 @@ onMounted(() => {
         country: 'Perú',
         from: '2024 AGO',
         to: '2024 NOV',
+        description: 'Diseñé y desarrollé un sitio web de suscripciones enfocado en la publicación de inmuebles (Tipo adondevivir), complementado con un panel de administración empresarial. Este panel permite la gestión integral del sitio, incluyendo funciones como la personalización del logotipo, la administración de tipos de viviendas, sub tipo, redes sociales etc, y la configuración de planes de suscripción, entre otras herramientas.',
+        skills: [
+            { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
+            { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
+            { name: 'VueJS', icon: 'mdi mdi-vuejs', color: '#4FC08D' },
+            { name: 'Laravel', icon: 'mdi mdi-laravel', color: '#FF2D20' },
+            { name: 'Git', icon: 'mdi mdi-git', color: '#F05032' },
+            { name: 'MySQL', icon: 'mdi mdi-database', color: '#4479A1' },
+            { name: 'JWT', icon: null, color: '#000000' },
+            { name: 'MercadoPago', icon: 'mdi mdi-credit-card-outline', color: '#4479A1' },
+            { name: null, icon: 'mdi mdi-api', color: '#000000' },
+        ],
+    })
+
+    experiences.value.push({
+        id: 1,
+        title: 'Desarrollador Web',
+        company: 'MistersWeb',
+        country: 'Perú',
+        from: '2024 AGO',
+        to: '2024 NOV',
         description: 'Diseñé y desarrollé un sitio web de suscripciones enfocado en la publicación de vehículos, complementado con un panel de administración empresarial. Este panel permite la gestión integral del sitio, incluyendo funciones como la personalización del logotipo, la administración de marcas, modelos, años de fabricación, versiones, y la configuración de planes de suscripción, entre otras herramientas.',
         skills: [
             { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
