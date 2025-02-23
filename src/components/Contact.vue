@@ -3,7 +3,6 @@ import { watch, reactive, computed, ref } from "vue";
 import { useVuelidate } from '@vuelidate/core'
 import { required, email, minLength, helpers } from '@vuelidate/validators'
 import Swal from 'sweetalert2'
-import '@sweetalert2/theme-wordpress-admin/wordpress-admin.scss';
 import axios from "axios";
 import { useThemeStore } from "@/stores/theme.js";
 import { storeToRefs } from 'pinia';

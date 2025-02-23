@@ -1,8 +1,6 @@
 <script setup>
 import { computed, onMounted, ref, watch } from "vue";
 import axios from "axios";
-import Swal from 'sweetalert2'
-import '@sweetalert2/theme-wordpress-admin/wordpress-admin.scss';
 import { useThemeStore } from "@/stores/theme.js";
 import { storeToRefs } from 'pinia';
 import { useDisplay } from 'vuetify'
