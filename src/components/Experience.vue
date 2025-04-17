@@ -14,6 +14,25 @@ onMounted(() => {
     experiences.value.push({
         id: 1,
         title: 'Desarrollador Web',
+        company: 'Opentic SAC',
+        country: 'Colombia',
+        from: '2025 FEB',
+        to: 'actual',
+        description: 'Actualmente me encuentro a cargo de la migración del sitio web, desarrollado previamente en Angular, hacia Vue.js 3. Durante este proceso, también estoy enfocándome en la mejora de la interfaz y experiencia de usuario (UI/UX). El sistema corresponde a un SGDEA (Sistema de Gestión Documental Electrónica Administrativa), utilizado por diversas entidades del Estado. Este sistema permite la gestión de documentos, incluyendo su creación, edición y eliminación. Además, cuenta con un módulo de firma electrónica que facilita la validación de documentos mediante el uso de certificados digitales.',
+        skills: [
+            { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
+            { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
+            { name: 'VueJS', icon: 'mdi mdi-vuejs', color: '#4FC08D' },
+            { name: 'Froala Editor', icon: 'mdi mdi-file-edit', color: '#305132' },
+            { name: 'Git', icon: 'mdi mdi-git', color: '#F05032' },
+            { name: 'JWT', icon: null, color: '#000000' },
+            { name: null, icon: 'mdi mdi-api', color: '#000000' },
+        ],
+    })
+
+    experiences.value.push({
+        id: 1,
+        title: 'Desarrollador Web',
         company: 'MistersWeb',
         country: 'Perú',
         from: '2024 AGO',

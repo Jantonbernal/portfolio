@@ -14,6 +14,25 @@ const projects = ref([])
 onMounted(() => {
     projects.value.push({
         id: 1,
+        title: 'Desarrollador Web',
+        company: 'OpenTIC (En Desarrollo)',
+        year: 2025,
+        skills: [
+            { name: 'Javascript', icon: 'mdi mdi-language-javascript', color: '#F7DF1E' },
+            { name: 'PHP', icon: 'mdi mdi-language-php', color: '#777BB4' },
+            { name: 'VueJS', icon: 'mdi mdi-vuejs', color: '#4FC08D' },
+            { name: 'Froala Editor', icon: 'mdi mdi-file-edit', color: '#305132' },
+            { name: 'Git', icon: 'mdi mdi-git', color: '#F05032' },
+            { name: 'JWT', icon: null, color: '#000000' },
+            { name: null, icon: 'mdi mdi-api', color: '#000000' },
+        ],
+        uri: '#',
+        image: 'opentic.png',
+        alt: 'Imagen del proyecto Opentic'
+    })
+
+    projects.value.push({
+        id: 1,
         title: 'Desarrollador Web (En pruebas)',
         company: 'MistersWeb (En pruebas)',
         year: 2024,
