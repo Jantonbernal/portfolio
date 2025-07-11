@@ -150,10 +150,10 @@ const goTo = (data = null) => {
                 </li>
             </ul>
             <div class="d-flex flex-row mt-16">
-                <button v-for="(item, index) in socialMedia" :key="index" :href="item.link" target="_blank" class="mx-3"
-                    :class="currentTheme == 'dark' ? 'card-dark' : 'card-light'">
-                    <v-icon :icon="item.icon" aria-label="Redes Sociales donde puedes ver más información"></v-icon>
-                </button>
+                <v-btn v-for="(item, index) in socialMedia" :key="index" :href="item.link" target="_blank"
+                    :class="['mx-3', currentTheme === 'dark' ? 'card-dark' : 'card-light']" icon>
+                    <v-icon :icon="item.icon" />
+                </v-btn>
             </div>
         </div>
     </v-navigation-drawer>
