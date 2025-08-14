@@ -26,14 +26,14 @@ onMounted(() => {
             { name: 'JWT', icon: null, color: '#000000' },
             { name: null, icon: 'mdi mdi-api', color: '#000000' },
         ],
-        uri: '#',
+        uri: 'https://qa-sgdeadocuments.opentic.co/',
         image: 'opentic.png',
         alt: 'Imagen del proyecto Opentic'
     })
 
     projects.value.push({
         id: 1,
-        title: 'Desarrollador Web (En pruebas)',
+        title: 'Desarrollador Web ',
         company: 'MistersWeb (En pruebas)',
         year: 2024,
         skills: [
