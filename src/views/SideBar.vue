@@ -101,12 +101,12 @@ const loadMenu = () => {
         'description': 'Ir a la página de Sistemas',
         'print': ''
     })
-    options.value.push({
-        'link': 'Contact',
-        'name': "echo 'Contacto'",
-        'description': 'Ir a la página de Contacto',
-        'print': ''
-    })
+    // options.value.push({
+    //     'link': 'Contact',
+    //     'name': "echo 'Contacto'",
+    //     'description': 'Ir a la página de Contacto',
+    //     'print': ''
+    // })
 }
 
 loadMenu()
